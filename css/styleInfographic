@@ -1,0 +1,36 @@
+/* Styles go here */
+
+body {
+font-family: 'PT Sans', sans-serif;
+font-size: 12px;
+background-color: #fefefe;
+margin: 0;
+overflow: hidden;
+}
+
+.line {
+fill: none;
+stroke: #ef0d0c;
+stroke-width: 1.5px;
+}
+
+#mychart {
+width: 100%;
+height: 100%;
+}
+
+.foreground path {
+  fill: none;
+  stroke: steelblue;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}

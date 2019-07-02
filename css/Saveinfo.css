@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	background: #000;
+}
+
+canvas {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	text-align: center;
+	transform: translateX(-50%);
+}
+
+small {
+	position: absolute;
+	bottom: 30px;
+	font-size: 12px;
+	line-height: 16px;
+	
+	&.info {
+		left: 30px;
+		text-align: left;
+	}
+	
+	&.credits {
+		right: 30px;
+		text-align: right;
+	}
+	
+	a {
+		display: block;
+		margin: 0 0 4px;
+		color: #fff;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+		
+	}
+	
+}
