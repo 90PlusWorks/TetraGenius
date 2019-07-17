@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>TetraGenius: © Copyright 2018 by Stellenbosch University: Department of Industrial Engineering:</title>
+    <!-- © Copyright 2018 Theunis Gysbert Dirkse-van Schalkwyk & Stellenbosch University 
+    <script src="js/effects/VREffect.js"></script>
+    --> 
+    <meta charset="utf-8">
+    <meta name="sassword" content="10100010010001001000100000111010101001110010101101010010">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+ <link rel="stylesheet" href="css/style1.css" type="text/css">
+    <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
+  </head>
+  <body>
+<!--button class="btn"><i class="fa fa-bars"></i> Swop Tetra</button-->
+    <!--<script src="index.js"></script> -->
+	
+<p> <script>	 //Include scripts   </script>
+<div id="header">
+	
+</style>
+
+     <a href = "index.html"><img <img src="images/logoTGs.png"
+   style="position:fixed; left:120px; top:0px; border:none;"
+   alt="Home"
+   title="Home"></a> <br><br>
+      <div id="errordiv"></div>
+   <TABLE BORDER="0">
+<TR>
+<!--<TD><button style="background-color:#963459;color:#ffbb44;width:50px;height:45px;" onclick="nextTetra()">Next</button></TD>
+
+<TD><button style="background-color:#963459;color:#ffbb44;width:50px;height:45px;" onclick="prevTetra()">Previous</button></TD>-->
+<style>
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 80px solid #963459;
+	border-bottom: 25px solid transparent;
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-left: 80px solid #ffbb44;
+	border-bottom: 25px solid transparent;
+}
+.glow {
+  font-size: 16px;
+  color: #fb4;
+  text-align: left;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 4px #000, 0 0 6px #000, 0 0 8px #612, 0 0 10px #612, 0 0 12px #612, 0 0 15px #612, 0 0 16px #612;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #000, 0 0 7px #000, 0 0 9px #624, 0 0 11px #624, 0 0 13px #624, 0 0 15px #624, 0 0 17px #ba4;
+  }
+}
+</style>
+<div></div>
+<h1 class="glow">Change Tetra</h1>
+
+<div Next class="triangle-right" onclick="nextTetra()"></div> 
+<div class="triangle-left" onclick="prevTetra()"></div>
+
+
+
+
+</TR>
+
+</TABLE>   
+    </div>
+	
+<script src="js/three.min.js"></script>
+<script src="js/colorpicker.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/fileSave.js"></script>
+<script src="js/threex.domevent.js"></script>
+<script src="js/AudioObject.js"></script>
+<script src="js/loaders/OBJLoader.js"></script>
+<script src="js/renderers/Projector.js"></script>
+<script type='text/javascript' src='js/DAT.GUI.min.js'></script>
+<script src="js/controls/TrackballControls.js"></script>
+<script src="js/controls/OrthographicTrackballControls.js"></script>
+<script src="js/effects/AnaglyphEffect.js"></script>
+<script src="js/effects/StereoEffect.js"></script>
+<script src="js/effects/OculusRiftEffect.js"></script>
+<script src="js/exporters/STLExporter.js"></script>
+<script src="js/exporters/OBJExporter.js"></script>
+<script src="js/exporters/ObjectExporter.js"></script>
+<script src="js/exporters/GeometryExporter.js"></script>
+<script src="js/exporters/BufferGeometryExporter.js"></script>
+<script src="js/exporters/MaterialExporter.js"></script>
+<script src="js/objects/mesh.js"></script>
+<script src="js/libs/OrbitControls.js"></script>
+<script src="js/libs/KeyboardState.js"></script>
+<script src="js/libs/THREEx.FullScreen.js"></script>
+<script src="js/libs/THREEx.WindowResize.js"></script>
+
+    <html>
+ 
+<!-- <IMG STYLE="position:absolute; TOP:135px; LEFT:170px; WIDTH:50px; HEIGHT:50px" SRC="Dirk_se_pic/circle.gif"> --> 
+
+<div id="ThreeJS" style="position: absolute; right:0px; bottom:0px"></div>  <!-- Black screen background for threejs -->
+	
+<!-- Code to display an information button and box when clicked. -->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<link rel=stylesheet href="css/jquery-ui.css" /> 
+<link rel=stylesheet href="css/info.css"/> 
+<script src="js/info.js"></script>
+
+<div id="infoButton" 
+   alt="More Information"
+   title="More Information"></div></div>
+<div id="infoBox" title="Additional Information">
+<p>Mouse-over faces to select (White Sphere) and click to add a Tetra design element.</p>
+<p>To create a useful design, you need to think about what you want!</p>
+<p>Right click to remove a Tetra design element!</p>
+<p>Left click and drag in open space to rotate. </p>
+	<p>Right click and drag open space to move the design. </p>
+	<p>Spin the Mouse wheel to zoom.</p>
+	<p>To use your own color from the color picker, the User option for "Random Colors" must be "OFF".</p>
+	<p>Click on Close Controls to minimise the menu.</p>
+	<p>M - Goes to Fullscreen and Esc- goes back to the Normal screen.</p>
+	<p>Symetric Design mode, designs, 3D option and colours may be changed in the controls top right corner.</p>
+	<p>Move the current rotating Tetra to a suitable position by using the ARROW keys.</p>
+	<p>Add a Tetra to apply the color change to new Tetras.</p>
+	<p> Rotate the current Tetra using X Y Z keys. This is useful for the globe and bal designs.</p>
+	</div>
+	
+</p>
+ <script type="text/javascript" src="00UTA.js"> </script> <script type="text/javascript" src="00UB.js"> </script>  
+			
+</body>
+</html>
