@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>TetraGenius: © Copyright 2018 by Stellenbosch University: Department of Industrial Engineering:</title>
+    <meta charset="utf-8">
+    <meta name="sassword" content="10100010010001001000100000111010101001110010101101010010">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+ <link rel="stylesheet" href="css/style1.css" type="text/css">
+    <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
+  </head>
+  <body>
+	  
+<p> <script>	 //Include scripts   </script>
+
+	
+</style>
+
+<style>
+.wrap-collapsible {
+  margin-bottom: 1.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.6rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #211205;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid currentColor;
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 700px;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(250, 224, 66, .2);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}
+
+.glow {
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 4px #fda, 0 0 6px #fda, 0 0 8px #fda, 0 0 10px #dfa, 0 0 12px #dfa, 0 0 15px #efb, 0 0 16px #ffc;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #ffc, 0 0 7px #ffb, 0 0 9px #ffa, 0 0 11px #efa, 0 0 13px #dfa, 0 0 15px #cfa, 0 0 17px #bfa;
+  }
+}
+</style>
+
+
+<div id="header">
+<br></br>
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" checked>
+  <label for="collapsible" class="lbl-toggle">Show or hide</label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+      <p>
+        <img src="images/2019LogoTs.png">	<br><br>
+		<h1 class="glow">Change Tetra</h1>
+
+		<img src="images/garrow.png" onclick="nextTetra()" ></img>
+		<img src="images/rarrow.png" onclick="prevTetra()"></img>
+		<h1 class="glow">Rotate Piece</h1>
+
+		<img src="images/RX.png" onclick="keyboardX()" ></img>
+		<img src="images/RY.png" onclick="keyboardY()" ></img>
+		<img src="images/RZ.png" onclick="keyboardZ()" ></img>
+		
+
+		<h1 class="glow">Start over!</h1>
+		<a href="00TetraGeniusB.html"><img src="images/art1.png"  alt="Art Sculpture Assembly"/></a>
+		<a href="00TetraGeniusB.html"><img src="images/space1.png" alt="Space Structure Assembly" /></a>
+		<a href="00TetraGeniusB.html"><img src="images/engi1.png"  alt="Engineering Structure Assembly"/></a>
+		<a href="00TetraGeniusB.html"><img src="images/arch1.png" alt="Architecture Building Assembly" /></a>
+      </p>
+    </div>
+  </div>
+</div>
+
+ </div>
+	
+<script src="js/three.min.js"></script>
+<script src="js/colorpicker.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/fileSave.js"></script>
+<script src="js/threex.domevent.js"></script>
+<script src="js/AudioObject.js"></script>
+<script src="js/loaders/OBJLoader.js"></script>
+<script src="js/renderers/Projector.js"></script>
+<script type='text/javascript' src='js/DAT.GUI.min.js'></script>
+<script src="js/controls/TrackballControls.js"></script>
+<script src="js/controls/OrthographicTrackballControls.js"></script>
+<script src="js/effects/AnaglyphEffect.js"></script>
+<script src="js/effects/StereoEffect.js"></script>
+<script src="js/effects/OculusRiftEffect.js"></script>
+<script src="js/exporters/STLExporter.js"></script>
+<script src="js/exporters/OBJExporter.js"></script>
+<script src="js/exporters/ObjectExporter.js"></script>
+<script src="js/exporters/GeometryExporter.js"></script>
+<script src="js/exporters/BufferGeometryExporter.js"></script>
+<script src="js/exporters/MaterialExporter.js"></script>
+<script src="js/objects/mesh.js"></script>
+<script src="js/libs/OrbitControls.js"></script>
+<script src="js/libs/KeyboardState.js"></script>
+<script src="js/libs/THREEx.FullScreen.js"></script>
+<script src="js/libs/THREEx.WindowResize.js"></script>
+
+    <html>
+ 
+
+<div id="ThreeJS" style="position: absolute; right:0px; bottom:0px"></div>  <!-- Black screen background for threejs -->
+	
+<!-- Code to display an information button and box when clicked. -->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<link rel=stylesheet href="css/jquery-ui.css" /> 
+<link rel=stylesheet href="css/info.css"/> 
+<script src="js/info.js"></script>
+
+<div id="infoButton"></div>
+<br></br>
+<br></br>
+<div id="infoBox" title="Additional Controls">
+<p>Mouse-over faces to select (White Sphere) and click to add a Tetra design element.</p>
+<p>To create a useful design, you need to think about what you want!</p>
+<p>Right click to remove a Tetra design element!</p>
+<p>Left click open space to rotate. </p>
+	<p>Right click open space to drag. </p>
+	<p>Mouse wheel to zoom.</p>
+	<p>To use your own color from the color picker, the User option for "Random Colors" must be "OFF".</p>
+	<p>Click on Close Controls to minimise the menu.</p>
+	<p>M - Fullscreen and Esc- Normal screen.</p>
+	<p>Symetric Design mode, designs, 3D option and colours may be changed in the controls top right corner.</p>
+	<p>Move the current rotating Tetra to a suitable position using the ARROW keys.</p>
+	<p>Add a Tetra to apply color change to new Tetras.</p>
+	<p> Rotate the current Tetra using X Y Z keys. This is useful for the globe and bal designs.</p>
+	</div>
+	
+</p>
+ <script type="text/javascript" src="00TBPuz3.js"> </script> <script type="text/javascript" src="00BPuz3.js"> </script>  
+			
+</body>
+</html>
