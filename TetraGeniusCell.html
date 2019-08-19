@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>TetraGenius: © Copyright 2018 by Stellenbosch University: Department of Industrial Engineering:</title>
+    <meta charset="utf-8">
+    <meta name="sassword" content="10100010010001001000100000111010101001110010101101010010">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+ <link rel="stylesheet" href="css/style1.css" type="text/css">
+    <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
+  </head>
+  <body>
+	  
+<p> <script>	 //Include scripts   </script>
+
+	
+</style>
+
+<style>
+.instruction {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap-collapsible {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.2rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 1px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #211205;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 700px;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(250, 224, 66, .2);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .1rem 0.1rem;
+}
+
+.glow {
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 4px #fda, 0 0 6px #fda, 0 0 8px #fda, 0 0 10px #dfa, 0 0 12px #dfa, 0 0 15px #efb, 0 0 16px #ffc;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #ffc, 0 0 7px #ffb, 0 0 9px #ffa, 0 0 11px #efa, 0 0 13px #dfa, 0 0 15px #cfa, 0 0 17px #bfa;
+  }
+}
+
+
+</style>
+
+
+<div id="header">
+	
+		
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" checked>
+  <label for="collapsible" class="lbl-toggle">Show or hide</label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+      <p>
+        
+		
+		
+		<h1 class="glow">Intructions</h1>
+		<div class="instruction">
+			<img src="images/white.png" ></img> 
+			
+			<div class="top-left">Mouse-over faces to select (White Sphere) and click to add a Tetra design element. Rotate and zoom in open space.</div>
+			
+		</div>
+		<img src="images/2019LogoTss.png">	<br><br>
+	<p></p>
+		
+      </p>
+    </div>
+  </div>
+  <h1 class="glow">Rotate Piece / Toggle Delete</h1>
+		<img src="images/garrow.png" onclick="nextTetra()" ></img><br>
+		<img src="images/rarrow.png" onclick="prevTetra()"></img>
+		<input id="img-switcher" onclick="deleteX()" type="checkbox"></input>
+		<label for="img-switcher"></label>
+		<img src="images/RX.png" onclick="keyboardX()" ></img><br>
+		<img src="images/RY.png" onclick="keyboardY()" ></img><br>
+		<img src="images/RZ.png" onclick="keyboardZ()" ></img>
+</div>
+
+ </div>
+	
+<script src="js/three.min.js"></script>
+<script src="js/colorpicker.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/fileSave.js"></script>
+<script src="js/threex.domevent.js"></script>
+<script src="js/AudioObject.js"></script>
+<script src="js/loaders/OBJLoader.js"></script>
+<script src="js/renderers/Projector.js"></script>
+<script type='text/javascript' src='js/DAT.GUI.min.js'></script>
+<script src="js/controls/TrackballControls.js"></script>
+<script src="js/controls/OrthographicTrackballControls.js"></script>
+<script src="js/effects/AnaglyphEffect.js"></script>
+<script src="js/effects/StereoEffect.js"></script>
+<script src="js/effects/OculusRiftEffect.js"></script>
+<script src="js/exporters/STLExporter.js"></script>
+<script src="js/exporters/OBJExporter.js"></script>
+<script src="js/exporters/ObjectExporter.js"></script>
+<script src="js/exporters/GeometryExporter.js"></script>
+<script src="js/exporters/BufferGeometryExporter.js"></script>
+<script src="js/exporters/MaterialExporter.js"></script>
+<script src="js/objects/mesh.js"></script>
+<script src="js/libs/OrbitControls.js"></script>
+<script src="js/libs/KeyboardState.js"></script>
+<script src="js/libs/THREEx.FullScreen.js"></script>
+<script src="js/libs/THREEx.WindowResize.js"></script>
+
+    <html>
+ 
+
+<div id="ThreeJS" style="position: absolute; right:0px; bottom:0px"></div>  <!-- Black screen background for threejs -->
+	
+
+	
+</p>
+ <script type="text/javascript" src="00TBCell.js"> </script> <script type="text/javascript" src="00BCell.js"> </script>  
+			
+</body>
+</html>
