@@ -2,9 +2,6 @@
 <html lang="en">
 	<head>
     <title>TetraGenius: © Copyright 2018 by Stellenbosch University: Department of Industrial Engineering:</title>
-    <!-- © Copyright 2018 Theunis Gysbert Dirkse-van Schalkwyk & Stellenbosch University 
-    <script src="js/effects/VREffect.js"></script>
-    --> 
     <meta charset="utf-8">
     <meta name="sassword" content="10100010010001001000100000111010101001110010101101010010">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -13,41 +10,272 @@
     <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
   </head>
   <body>
-<!--button class="btn"><i class="fa fa-bars"></i> Swop Tetra</button-->
-    <!--<script src="index.js"></script> -->
-	
+	  
 <p> <script>	 //Include scripts   </script>
-<div id="header">
+
 	
 </style>
 
-     <a href = "index.html"><img <img src="images/2019LogoTs.png"
-   style="position:fixed; left:120px; top:0px; border:none;"
-   alt="Home"
-   title="Home"></a> <br><br>
-      <div id="errordiv"></div>
-   <TABLE BORDER="0">
-<TR>
-<!--<TD><button style="background-color:#963459;color:#ffbb44;width:50px;height:45px;" onclick="nextTetra()">Next</button></TD>
-
-<TD><button style="background-color:#963459;color:#ffbb44;width:50px;height:45px;" onclick="prevTetra()">Previous</button></TD>-->
 <style>
-.triangle-left {
-	width: 0;
-	height: 0;
-	border-top: 25px solid transparent;
-	border-right: 80px solid #fda;
-	border-bottom: 25px solid transparent;
+.instruction {
+  position: relative;
+  text-align: center;
+  color: white;
 }
-.triangle-right {
-	width: 0;
-	height: 0;
-	border-top: 25px solid transparent;
-	border-left: 80px solid #dfa;
-	border-bottom: 25px solid transparent;
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap-collapsible {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 15px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #211205;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 300px;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(250, 224, 66, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
+}
+.wrap-collapsible2 {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle2 {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 15px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle2:hover {
+  color: #211205;
+}
+
+.lbl-toggle2::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle2:checked + .lbl-toggle2::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content2 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle2:checked + .lbl-toggle2 + .collapsible-content2 {
+  max-height: 700px;
+}
+
+.toggle2:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content2 .content-inner2 {
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
+}
+.lbl-toggle0 {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 10px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle0:hover {
+  color: #211205;
+}
+
+.lbl-toggle0::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle0:checked + .lbl-toggle0::before {
+  <!--transform: rotate(90deg) translateX(-3px); -->
+}
+
+.collapsible-content0 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
+  max-height: 200px;
+}
+
+.toggle0:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content0 .content-inner2 {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
 }
 .glow {
-  font-size: 16px;
+  font-size: 13px;
+  color: #000;
+  text-align: left;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+.glow2 {
+  font-size: 36px;
   color: #000;
   text-align: left;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -64,30 +292,134 @@
     text-shadow: 0 0 5px #ffc, 0 0 7px #ffb, 0 0 9px #ffa, 0 0 11px #efa, 0 0 13px #dfa, 0 0 15px #cfa, 0 0 17px #bfa;
   }
 }
+
+
 </style>
-<div></div>
-<h1 class="glow">Change Tetra</h1>
-
-<div Next class="triangle-right" onclick="nextTetra()"></div> 
-<div class="triangle-left" onclick="prevTetra()"></div>
 
 
+<div id="header">
+	<!--<div class="wrap-collabsible0">
+  <input id="collapsible0" class="toggle0" type="checkbox" checked>
+  <label for="collapsible0" class="lbl-toggle0">Show/Hide Carousel</label>
+  <div class="collapsible-content0">
+	   
+    <div class="content-inner0">
+		<div id="carousel">
+<span style=float:left class="glow2" onclick="galleryspin('-')">&lt;</span>
+<span style=float:right class="glow2" onclick="galleryspin('')">&gt;</span>
+<figure id="spinner">
+<figure>
+  <img src="images/Junk/1.jpg" alt="1">
+    <figcaption>1</figcaption>
+</figure>
+<figure>
+  <img src="images/Junk/2.jpg" alt="">
+    <figcaption>2</figcaption>
+</figure>
+<figure>
+  <img src="images/Junk/3.jpg" alt="">
+    <figcaption>3</figcaption>
+  </figure>
+   <figure>
+     <img src="images/Junk/4.jpg" alt="">
+<figcaption>4</figcaption>
+</figure>
+<figure>
+  <img src="images/Junk/5.jpg" alt="">
+<figcaption>5</figcaption>
+</figure>
+<figure>
+  <img src="images/Junk/6.jpg" alt="">
+<figcaption>6</figcaption>
+</figure>
+  <figure>
+    <img src="images/Junk/7.jpg" alt="A ballerina photographed in ">
+<figcaption>7</figcaption>
+</figure>
+</div>
 
-
-</TR>
-
-</TABLE>   
+  <p>Controls: cursor left and right or click on arrows to rotate, <b>Z</b> or click to toggle zoom on foreground image, <b>C</b> or hover to show/hide caption.
+      	<br><br>
+		</div>
+	    </p>
     </div>
+  </div>-->
+	 
+	 <div class="wrap-collabsible0">
+		  <input id="collapsible0" class="toggle0" type="checkbox" checked>
+  <label for="collapsible0" class="lbl-toggle0">Show/hide Design type</label>
+  <div class="collapsible-content0">
+    <div class="content-inner0">		
+		<h1 class="glow">Change Design type</h1>
+<a href="TetraGeniusCell.html">
+  <img src="images/Icell.png"  ></img></a>
+  <a href="00TetraGeniusE.html">
+  <img src="images/Iengineer.png"  ></img></a>
+  <a href="00TetraGeniusS.html">
+		<img src="images/Ispace.png" ></img></a>
+		<a href="00TetraGeniusB.html">
+	<img src="images/Iarchitech.png" ></img></a>
+	<a href="TetraGeniusEarth.html">
+		<img src="images/Iearth.png" ></img></a>
+ </div>
+  </div>
+   </div>
 	
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox" checked>
+  <label for="collapsible" class="lbl-toggle">Show/Hide Instructions</label>
+  <div class="collapsible-content">	   
+    <div class="content-inner">        
+		<div class="instruction">			
+			<h1 class="glow" >Mouse-over faces to select (White Sphere)<br> and click to add a Tetra design element. <br>Rotate and zoom in open space.<br>Right-click deletes a Tetra.<br>If you cannot do right-click you may <br>toggle Build/Delete in the Controls below.
+			</h1>			
+		</div>
+		<img src="images/2019LogoTss.png">	<br><br>
+		</div>	
+    </div>
+  </div>
+ 
+  
+  <div class="wrap-collabsible2">
+  <input id="collapsible2" class="toggle2" type="checkbox" checked>
+  <label for="collapsible2" class="lbl-toggle2">Show/hide Controls</label>
+  <div class="collapsible-content2">
+    <div class="content-inner2">		
+		<h1 class="glow">Change Tetra</h1>
+  <img src="images/rarrow2.png" onclick="prevTetra()"></img>
+		<img src="images/garrow2.png" onclick="nextTetra()" ></img><br>
+		 <h1 class="glow">Change Texture</h1>
+	<img src="images/rarrow.png" onclick="prevTex()"></img>
+		<img src="images/garrow.png" onclick="nextTex()" ></img><br>
+		 <h1 class="glow">Build or Delete</h1>	
+		<input id="img-switcher" onclick="deleteX()" type="checkbox"></input>
+		<label for="img-switcher"></label>
+		 <h1 class="glow">Rotate Piece</h1>
+		<img src="images/RX.png" onclick="keyboardX()" ></img>
+		<img src="images/RY.png" onclick="keyboardY()" ></img>
+		<img src="images/RZ.png" onclick="keyboardZ()" ></img>
+
+ </div>
+  </div>
+   </div>
+ 
+
+  
+
+ </div>
+ <!-- -->
+
+ <!-- -->
+ 
 <script src="js/three.min.js"></script>
-<script src="js/colorpicker.js"></script>
+
 <script src="js/Detector.js"></script>
 <script src="js/fileSave.js"></script>
 <script src="js/threex.domevent.js"></script>
 <script src="js/AudioObject.js"></script>
 <script src="js/loaders/OBJLoader.js"></script>
 <script src="js/renderers/Projector.js"></script>
-<script type='text/javascript' src='js/DAT.GUI.min.js'></script>
+<script type='text/javascript' src='js/dat.gui.js'></script>
 <script src="js/controls/TrackballControls.js"></script>
 <script src="js/controls/OrthographicTrackballControls.js"></script>
 <script src="js/effects/AnaglyphEffect.js"></script>
@@ -104,42 +436,18 @@
 <script src="js/libs/KeyboardState.js"></script>
 <script src="js/libs/THREEx.FullScreen.js"></script>
 <script src="js/libs/THREEx.WindowResize.js"></script>
-<script src="js/jquery-1.9.1.js"></script>
-<script src="js/jquery-ui.js"></script>
-<link rel=stylesheet href="css/jquery-ui.css" /> 
-<link rel=stylesheet href="css/info.css"/> 
-<script src="js/info.js"></script>
 
     <html>
  
-<!-- <IMG STYLE="position:absolute; TOP:135px; LEFT:170px; WIDTH:50px; HEIGHT:50px" SRC="Dirk_se_pic/circle.gif"> --> 
 
 <div id="ThreeJS" style="position: absolute; right:0px; bottom:0px"></div>  <!-- Black screen background for threejs -->
 	
-<!-- Code to display an information button and box when clicked. -->
 
-
-<div id="infoButton" 
-   alt="More Information"
-   title="More Information"></div></div>
-<div id="infoBox" title="Additional Information">
-<p>Mouse-over faces to select (White Sphere) and click to add a Tetra design element.</p>
-<p>To create a useful design, you need to think about what you want!</p>
-<p>Right click to remove a Tetra design element!</p>
-<p>Left click and drag in open space to rotate. </p>
-	<p>Right click and drag open space to move the design. </p>
-	<p>Spin the Mouse wheel to zoom.</p>
-	<p>To use your own color from the color picker, the User option for "Random Colors" must be "OFF".</p>
-	<p>Click on Close Controls to minimise the menu.</p>
-	<p>M - Goes to Fullscreen and Esc- goes back to the Normal screen.</p>
-	<p>Symetric Design mode, designs, 3D option and colours may be changed in the controls top right corner.</p>
-	<p>Move the current rotating Tetra to a suitable position by using the ARROW keys.</p>
-	<p>Add a Tetra to apply the color change to new Tetras.</p>
-	<p> Rotate the current Tetra using X Y Z keys. This is useful for the globe and bal designs.</p>
-	</div>
 	
 </p>
- <script type="text/javascript" src="00UTA.js"> </script> <script type="text/javascript" src="00UB.js"> </script>  
+ <script type="text/javascript" src="0TBCell.js"> </script> <script type="text/javascript" src="0BCell.js"> </script>  
+ 
+ 
 			
 </body>
 </html>
