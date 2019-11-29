@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background: rgb(123, 158, 158);
+    background: rgb(5, 50, 50);
 }
 #hexGrid {
   display: flex;
@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   font-family: 'Raleway', sans-serif;
-  font-size: 15px;
+  font-size: 26px;
   list-style-type: none;
 }
 
@@ -48,7 +48,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    color: #fff;
+    color: #FFFFFF;
     overflow: hidden;
     -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
         -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
@@ -71,7 +71,7 @@ body {
   width: 100%;
   padding: 5%;
   box-sizing:border-box;
-  background-color: rgba(0, 128, 128, 0.8);
+  background-color: rgba(0, 50, 50, 1);
   font-weight: 300;
   -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
           transition:          transform .2s ease-out, opacity .3s ease-out;
@@ -79,7 +79,7 @@ body {
 .hex h1 {
   bottom: 50%;
   padding-top:50%;
-  font-size: 1.5em;
+  font-size: 2em;
   z-index: 1;
   -webkit-transform:translate3d(0,-100%,0);
       -ms-transform:translate3d(0,-100%,0);
@@ -162,6 +162,6 @@ body {
 
 @media (max-width: 400px) {
     #hexGrid {
-        font-size: 13px;
+        font-size: 26px;
     }
 }
