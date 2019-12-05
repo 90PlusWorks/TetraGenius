@@ -1,152 +1,279 @@
-/* TetraGenius.css, originally written by Joost Nieuwenhuijse
- *    few changes made by Theuns Dirkse-van Schalkwyk for TetraGenius
+/* 
+ *    By Theuns Dirkse-van Schalkwyk for TetraGenius/WorkflowMade Easy
  */
 
-#img-switcher {
-    width: 0px;
-    height: 0px;
-    visibility: hidden;
-    position: absolute;
-}
-#img-switcher + label {
-    background-image: url('../images/build.png');
-    width: 50px;
-    height: 50px;
-    display: block;
-    background-size: cover;
-}
-#img-switcher:checked + label {
-    background-image: url('../images/del.png');
-}
-
-#filedropzone {
-  border: 2px dashed #bbb;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  
-  padding: 15px;
-  color: black;
-  width: 100%;
-  background: #fff;
-  margin-top: 0.5em;
-}
-
-#filedropzone_empty {
+.instruction {
+  position: relative;
   text-align: center;
-  color: #888;
+  color: white;
 }
 
-#filedropzone_filled {
-  color: black;
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap-collapsible {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
   display: none;
 }
 
-#filebuttons {
-  /* float: right; */
-  margin-left: 2em;
-  display: inline;
-}
+.lbl-toggle {
+  display: block;
 
-canvas { 
-  cursor: move; 
-}
-
-.downloadOutputFileLink {
-   padding: 2px;
-   padding-left: 8px;
-   padding-right: 8px;
-   border: 1px solid black;
-
-   border-radius: 4px;  /* css mess */
-   -webkit-border-radius: 4px;
-   -moz-border-radius: 4px;
-
-   background: #d8f;
-   background: -webkit-gradient(linear, left top, left bottom, from(#eaf), to(#c6f));
-   background: -moz-linear-gradient(top,  #eaf,  #c6f);
-
-   text-decoration: none;
-   color: black;
-   font-size: 0.9em;
-   font-weight: bold;
-   box-shadow: 0px 0px 8px black;
-}
-
-#parametersdiv {
-  /* display: inline-block;     ineffective since we do control in openjscad.js */
-  position: absolute;         
-
-  bottom: 9em;                /* draggable via jQuery cannot move bottom: align, stick at the bottom (bug!!) */
-  left: 1em;
-  /* top: 2em;                if draggable, but must be left/top oriented, cannot be aligned bottom which looks nicer
-     left: 16em;
-   */
-  
-  z-index: 4;
-  border: 1px solid rgb(200,200,200);
- 
-  border-radius: 5px;     
-  -moz-border-radius: 5px;    /* css mess */
-  -webkit-border-radius: 5px;
-
-  margin: 5px 0px 5px 0px;
-  padding: 10px;
-  background: #fff; /* rgba(255,255,255,0.7); */
-  opacity: 0.8;
-  
-  /* box-shadow: 0px 0px 15px black;  no shadow, it would indicate moveable/dragable */
-  
-  /* cursor: move;     moveable now */
-}
-#parametersdiv th {
-  text-align: left;
-  font-size: 1em;
   font-weight: bold;
-}
-#parametersdiv td {
-  text-align: right;
-  font-size: 0.8em;
-}
-#parametersdiv input, #parametersdiv textarea, #parametersdiv select {
-  font-size: 0.9em;
-  background: #fea;
-  border: none;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 15px;
+  transition: all 0.25s ease-out;
 }
 
-#instantUpdate {
-   margin-left: 1em;
-}
-#instantUpdateLabel {
-   font-size: 0.9em;
+.lbl-toggle:hover {
+  color: #211205;
 }
 
-#statusdiv {
-}
-#statusspan {
-   margin-right: 2em;
-}
-#statusbuttons {
-   float: right;
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
 }
 
-#selectdiv {
-  position: fixed;
-  top: 0.5em;
-  right: 0.5em;
-
-  z-index: 4;
-  background: transparent;
-  opacity: 0.8;
-  border: none;
-  display: inline;
-}
-#startRange {
-  margin: 2px;
-  padding: 2px;
-}
-#endRange {
-  margin: 2px;
-  padding: 2px;
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
 }
 
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 300px;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(250, 224, 66, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
+}
+.wrap-collapsible2 {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle2 {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 15px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle2:hover {
+  color: #211205;
+}
+
+.lbl-toggle2::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle2:checked + .lbl-toggle2::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content2 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle2:checked + .lbl-toggle2 + .collapsible-content2 {
+  max-height: 700px;
+}
+
+.toggle2:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content2 .content-inner2 {
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
+}
+.lbl-toggle0 {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 10px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle0:hover {
+  color: #211205;
+}
+
+.lbl-toggle0::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle0:checked + .lbl-toggle0::before {
+  transform: rotate(90deg) translateX(-3px); 
+}
+
+.collapsible-content0 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
+  max-height: 200px;
+}
+
+.toggle0:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content0 .content-inner2 {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
+}
+.glow {
+  font-size: 13px;
+  color: #000;
+  text-align: left;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+.glow2 {
+  font-size: 36px;
+  color: #000;
+  text-align: left;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+from {
+    text-shadow: 0 0 4px #fda, 0 0 6px #fda, 0 0 8px #fda, 0 0 10px #dfa, 0 0 12px #dfa, 0 0 15px #efb, 0 0 16px #ffc;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #ffc, 0 0 7px #ffb, 0 0 9px #ffa, 0 0 11px #efa, 0 0 13px #dfa, 0 0 15px #cfa, 0 0 17px #bfa;
+  }
+}
