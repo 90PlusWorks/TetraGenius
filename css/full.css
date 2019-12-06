@@ -1,0 +1,22 @@
+canvas {
+  background-color: black;
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+button {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  transform: translate(-20%, -30%);
+  z-index: 999;
+  font-size: 24px;
+}
+
+html,
+body,
+canvas {
+  touch-action: none;
+}
