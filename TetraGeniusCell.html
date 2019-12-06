@@ -8,6 +8,15 @@
 
  <link rel="stylesheet" href="css/style1.css" type="text/css">
     <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
+ 
+
+    <div class="full" id="start0">	
+		<link rel="stylesheet" href="css/full.css" type="text/css">
+		<button id="fs-btn">Click/Tap to switch fullscreen</button>		
+			
+		</div>
+
+<script src="js/full.js"></script>
   </head>
   <body>
 	  
@@ -298,6 +307,8 @@ input[type='checkbox'] {
 
 
 <div id="header">
+	    
+		
 
 	 
 	 <div class="wrap-collabsible0">
@@ -319,6 +330,7 @@ input[type='checkbox'] {
  </div>
   </div>
    </div>
+  
 	
 <div class="wrap-collabsible">
   <input id="collapsible" class="toggle" type="checkbox" checked>
@@ -350,7 +362,8 @@ input[type='checkbox'] {
 		 <h1 class="glow">Build or Delete</h1>	
 		<input id="img-switcher" onclick="deleteX()" type="checkbox"></input>
 		<label for="img-switcher"></label>
-		 <h1 class="glow">Rotate Piece</h1>
+		 <h1 class="glow">Esc; Fullscreen or Rotate Piece</h1>
+		 <img src="images/Esc.png" onclick="removeFullscreen()" ></img>
 		<img src="images/RX.png" onclick="keyboardX()" ></img>
 		<img src="images/RY.png" onclick="keyboardY()" ></img>
 		<img src="images/RZ.png" onclick="keyboardZ()" ></img>
@@ -392,6 +405,7 @@ input[type='checkbox'] {
 <script src="js/libs/KeyboardState.js"></script>
 <script src="js/libs/THREEx.FullScreen.js"></script>
 <script src="js/libs/THREEx.WindowResize.js"></script>
+<script src="js/jQuery.min.js"></script>
 
     <html>
  
