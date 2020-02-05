@@ -8,18 +8,30 @@
 
  <link rel="stylesheet" href="css/style1.css" type="text/css">
     <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
- 
-
-   
   </head>
   <body>
 	  
 <p> <script>	 //Include scripts   </script>
 
-	
-</style>
 
 <style>
+	.img-switcher {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    position: absolute;
+}
+.img-switcher + label {
+    background-image: url('/images/build.png');
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-size: cover;
+}
+.img-switcher:checked + label {
+    background-image: url('/images/del.png');
+}
+
 .instruction {
   position: relative;
   text-align: center;
@@ -243,8 +255,70 @@ input[type='checkbox'] {
   transition: transform .2s ease-out;
 }
 
+.toggle2:checked + .lbl-toggle2::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+.wrap-collapsible0 {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle0 {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;.wrap-collapsible0 {
+  margin-bottom: 0.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle0 {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.2rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 1px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle0:hover {
+  color: #211205;
+}
+
+.lbl-toggle0::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
 .toggle0:checked + .lbl-toggle0::before {
-  <!--transform: rotate(90deg) translateX(-3px); -->
+  transform: rotate(90deg) translateX(-3px);
 }
 
 .collapsible-content0 {
@@ -254,20 +328,78 @@ input[type='checkbox'] {
 }
 
 .toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
-  max-height: 200px;
+  max-height: 700px;
 }
 
-.toggle0:checked + .lbl-toggle {
+.toggle0:checked + .lbl-toggle0 {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.collapsible-content0 .content-inner2 {
+.collapsible-content0 .content-inner0 {
   background: rgba(250, 224, 66, 0);
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  padding: 0rem 0rem;
+  border-bottom: 1px solid rgba(250, 224, 66, .2);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .1rem 0.1rem;
+}
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.2rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 1px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle0:hover {
+  color: #211205;
+}
+
+.lbl-toggle0::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle0:checked + .lbl-toggle0::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content0 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
+  max-height: 700px;
+}
+
+.toggle0:checked + .lbl-toggle0 {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content0 .content-inner0 {
+  background: rgba(250, 224, 66, 0);
+  border-bottom: 1px solid rgba(250, 224, 66, .2);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .1rem 0.1rem;
 }
 .glow {
   font-size: 13px;
@@ -306,7 +438,7 @@ input[type='checkbox'] {
 
 	 
 	 <div class="wrap-collabsible0">
-		  <input id="collapsible0" class="toggle0" type="checkbox" checked>
+		  <input id="collapsible0" class="toggle0" type="checkbox" unchecked>
   <label for="collapsible0" class="lbl-toggle0">Show/hide Design type</label>
   <div class="collapsible-content0">
     <div class="content-inner0">		
@@ -327,7 +459,7 @@ input[type='checkbox'] {
   
 	
 <div class="wrap-collabsible">
-  <input id="collapsible" class="toggle" type="checkbox" checked>
+  <input id="collapsible" class="toggle" type="checkbox" unchecked>
   <label for="collapsible" class="lbl-toggle">Show/Hide Instructions</label>
   <div class="collapsible-content">	   
     <div class="content-inner">        
@@ -343,21 +475,20 @@ input[type='checkbox'] {
  
   
   <div class="wrap-collabsible2">
-  <input id="collapsible2" class="toggle2" type="checkbox" checked>
+  <input id="collapsible2" class="toggle2" type="checkbox" unchecked>
   <label for="collapsible2" class="lbl-toggle2">Show/hide Controls</label>
   <div class="collapsible-content2">
     <div class="content-inner2">		
 		<h1 class="glow">Change Tetra</h1>
-  <img src="images/rarrow2.png" onclick="prevTetra()"></img>
-		<img src="images/garrow2.png" onclick="nextTetra()" ></img><br>
+  <img src="images/rarrow3.png" width="48" height="48" onclick="prevTetra()"></img>
+		<img src="images/garrow3.png" width="48" height="48" onclick="nextTetra()" ></img><br>
 		 <h1 class="glow">Change Texture</h1>
-	<img src="images/rarrow.png" onclick="prevTex()"></img>
-		<img src="images/garrow.png" onclick="nextTex()" ></img><br>
-		 <h1 class="glow">Build or Delete</h1>	
+	<img src="images/rarrow4.png" width="48" height="48" onclick="prevTex()"></img>
+		<img src="images/garrow4.png" width="48" height="48" onclick="nextTex()" ></img><br>
+		<h1 class="glow">Build or Delete</h1><br>	
 		<input id="img-switcher" onclick="deleteX()" type="checkbox"></input>
-		<label for="img-switcher"></label>
-		 <h1 class="glow">Esc; Fullscreen or Rotate Piece</h1>
-		 <img src="images/Esc.png" onclick="removeFullscreen()" ></img>
+		<label for="img-switcher"></label><br>
+		 <h1 class="glow">Rotate Piece</h1>
 		<img src="images/RX.png" onclick="keyboardX()" ></img>
 		<img src="images/RY.png" onclick="keyboardY()" ></img>
 		<img src="images/RZ.png" onclick="keyboardZ()" ></img>
@@ -410,6 +541,7 @@ input[type='checkbox'] {
 	
 </p>
  <script type="text/javascript" src="00TBCell.js"> </script> <script type="text/javascript" src="00BCell.js"> </script>  
+ 
  
  
 			
