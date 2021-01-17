@@ -4,20 +4,24 @@
     <title>TetraGenius: © Copyright 2018 by Stellenbosch University: Department of Industrial Engineering:</title>
     <meta charset="utf-8">
     <meta name="description" content="Free Web Game">
-  <meta name="keywords" content="3D, Creative, Educational, Design, artgame, Colorful, Relaxing, Mouse only, Voxel blocks, Singleplayer, Puzzle, Experimental,  Endless, Construct 2,  user-interface, Feel Good, mind-bending, Visualization, Perspective">
-  <meta name="author" content="Theuns Dirkse-van Schalkwyk">
+	<meta name="keywords" content="3D, Creative, Educational, Design, artgame, Colorful, Relaxing, Mouse only, Voxel blocks, Singleplayer, Puzzle, Experimental,  Endless, Construct 2,  user-interface, Feel Good, mind-bending, Visualization, Perspective">
+	<meta name="author" content="Theuns Dirkse-van Schalkwyk">
     <meta name="sassword" content="10100010010001001000100000111010101001110010101101010010">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
- <link rel="stylesheet" href="css/style1.css" type="text/css">
+	<link rel="stylesheet" href="css/style1.css" type="text/css">
     <link rel="stylesheet" href="css/TetraGenius.css" type="text/css">
-  </head>
-  <body>
+	</head>
+<body>
 	  
 <p> <script>	 //Include scripts   </script>
 
 
 <style>
+	.pp {
+    color: lightblue;
+    font-size: 0.6rem;
+}
 	.img-switcher {
     width: 0px;
     height: 0px;
@@ -40,7 +44,16 @@
   text-align: center;
   color: white;
 }
-
+/* Top right div */
+.top-rightDiv {
+  height: 10px;
+  width: 100px;
+  right: 0;
+  position: fixed;
+  top: 20px;
+}
+  
+  
 /* Bottom left text */
 .bottom-left {
   position: absolute;
@@ -86,10 +99,10 @@ input[type='checkbox'] {
 
 .lbl-toggle {
   display: block;
-
+  max-width: 100px;
   font-weight: bold;
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   text-align: center;
 
@@ -133,7 +146,7 @@ input[type='checkbox'] {
 }
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 300px;
+  max-height: 700px;
 }
 
 .toggle:checked + .lbl-toggle {
@@ -142,8 +155,9 @@ input[type='checkbox'] {
 }
 
 .collapsible-content .content-inner {
-  background: rgba(250, 224, 66, 0);
-  border-bottom: 1px solid rgba(250, 224, 66, 0);
+  background: rgba(255, 255, 255, 0);
+  width: 100px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   padding: 0rem 0rem;
@@ -158,10 +172,10 @@ input[type='checkbox'] {
 
 .lbl-toggle2 {
   display: block;
-
+  max-width: 100px;
   font-weight: bold;
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   text-align: center;
 
@@ -258,7 +272,7 @@ input[type='checkbox'] {
   transition: transform .2s ease-out;
 }
 
-.toggle2:checked + .lbl-toggle2::before {
+.toggle0:checked + .lbl-toggle0::before {
   transform: rotate(90deg) translateX(-3px);
 }
 .wrap-collapsible0 {
@@ -271,42 +285,102 @@ input[type='checkbox'] {
 
 .lbl-toggle0 {
   display: block;
-
+  max-width: 100px;
   font-weight: bold;
   font-family: monospace;
-  font-size: 0.9rem;.wrap-collapsible0 {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 0.02rem;
+
+  color: #ffff00;
+  background: #A1A20E;
+
+  cursor: pointer;
+
+  border-radius: 15px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle0:hover {
+  color: #211205;
+}
+
+.lbl-toggle0::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 0px solid currentColor;
+  vertical-align: middle;
+  margin-right: .1rem;
+  transform: translateY(-0px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle0:checked + .lbl-toggle0::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content0 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
+  max-height: 700px;
+}
+
+.toggle0:checked + .lbl-toggle0 {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content0 .content-inner0 {
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
+}
+.wrap-collapsible3 {
   margin-bottom: 0.2rem 0;
+  max-width: 7px;
 }
 
 input[type='checkbox'] {
   display: none;
 }
 
-.lbl-toggle0 {
+.lbl-toggle3 {
   display: block;
-
+  max-width: 100px;
   font-weight: bold;
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   text-align: center;
 
-  padding: 0.2rem;
+  padding: 0.02rem;
 
   color: #ffff00;
   background: #A1A20E;
 
   cursor: pointer;
 
-  border-radius: 1px;
+  border-radius: 15px;
   transition: all 0.25s ease-out;
 }
 
-.lbl-toggle0:hover {
+.lbl-toggle3:hover {
   color: #211205;
 }
 
-.lbl-toggle0::before {
+.lbl-toggle3::before {
   content: ' ';
   display: inline-block;
 
@@ -320,92 +394,35 @@ input[type='checkbox'] {
   transition: transform .2s ease-out;
 }
 
-.toggle0:checked + .lbl-toggle0::before {
+.toggle3:checked + .lbl-toggle3::before {
   transform: rotate(90deg) translateX(-3px);
 }
 
-.collapsible-content0 {
+.collapsible-content3 {
   max-height: 0px;
   overflow: hidden;
   transition: max-height .5s ease-in-out;
 }
 
-.toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
+.toggle3:checked + .lbl-toggle3 + .collapsible-content3 {
   max-height: 700px;
 }
 
-.toggle0:checked + .lbl-toggle0 {
+.toggle3:checked + .lbl-toggle3 {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.collapsible-content0 .content-inner0 {
-  background: rgba(250, 224, 66, 0);
-  border-bottom: 1px solid rgba(250, 224, 66, .2);
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding: .1rem 0.1rem;
-}
-  text-transform: uppercase;
-  text-align: center;
-
-  padding: 0.2rem;
-
-  color: #ffff00;
-  background: #A1A20E;
-
-  cursor: pointer;
-
-  border-radius: 1px;
-  transition: all 0.25s ease-out;
+.collapsible-content3 .content-inner3 {
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0rem 0rem;
 }
 
-.lbl-toggle0:hover {
-  color: #211205;
-}
-
-.lbl-toggle0::before {
-  content: ' ';
-  display: inline-block;
-
-  border-top: 0px solid transparent;
-  border-bottom: 0px solid transparent;
-  border-left: 0px solid currentColor;
-  vertical-align: middle;
-  margin-right: .1rem;
-  transform: translateY(-0px);
-
-  transition: transform .2s ease-out;
-}
-
-.toggle0:checked + .lbl-toggle0::before {
-  transform: rotate(90deg) translateX(-3px);
-}
-
-.collapsible-content0 {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height .5s ease-in-out;
-}
-
-.toggle0:checked + .lbl-toggle0 + .collapsible-content0 {
-  max-height: 700px;
-}
-
-.toggle0:checked + .lbl-toggle0 {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.collapsible-content0 .content-inner0 {
-  background: rgba(250, 224, 66, 0);
-  border-bottom: 1px solid rgba(250, 224, 66, .2);
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding: .1rem 0.1rem;
-}
 .glow {
-  font-size: 13px;
+  font-size: 10px;
   color: #000;
   text-align: left;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -435,78 +452,88 @@ input[type='checkbox'] {
 </style>
 
 
-<div id="header">
 	    
 		
 
-	 
-	 <div class="wrap-collabsible0">
-		  <input id="collapsible0" class="toggle0" type="checkbox" unchecked>
-  <label for="collapsible0" class="lbl-toggle0">Design type</label>
-  <div class="collapsible-content0">
-    <div class="content-inner0">		
-		<h1 class="glow">Change Design type</h1>
-  <a href="00TetraGeniusA.html">
-  <img src="images/Iart.png" alt="Art Designs" ></img></a><br>
-  <a href="00TetraGeniusE.html">
-  <img src="images/Iengineer.png"  ></img></a><br>
-  <a href="00TetraGeniusS.html">
-		<img src="images/Ispace.png" ></img></a><br>
-		<a href="00TetraGeniusB.html">
-	<img src="images/Iarchitech.png" ></img></a><br>
-	<a href="TetraGeniusEarth.html">
-		<img src="images/Iearth.png" ></img></a><br>
- </div>
-  </div>
-   </div>
-  
+
+<div id="header">
+	<div class = "top-rightDiv">
+		<div class="wrap-collabsible">
+			<input id="collapsible" class="toggle" type="checkbox" unchecked>
+			<label for="collapsible" class="lbl-toggle">Design type</label>
+			<div class="collapsible-content">
+				<div class="content-inner">		
+				<h1 class="glow">Change Design type</h1>
+				<!--<a href="00TetraGeniusA.html">
+				<img src="images/Iart.png" alt="Art Designs" width="30" height="30" ></img></a><br>
+				<a href="00TetraGeniusE.html">
+				<img src="images/Iengineer.png"  width="30" height="30" ></img></a><br>-->
+				<a href="00TetraGeniusS.html">
+				<img src="images/Ispace.png" width="30" height="30" ></a><br>
+				<!--<a href="00TetraGeniusB.html">
+				<img src="images/Iarchitech.png" width="30" height="30" ></img></a><br>
+				<a href="TetraGeniusEarth.html">
+				<img src="images/Iearth.png" width="30" height="30" ></img></a><br>-->
+			    </div>
+			</div>   
+		</div>
+
 	
-<div class="wrap-collabsible">
-  <input id="collapsible" class="toggle" type="checkbox" unchecked>
-  <label for="collapsible" class="lbl-toggle">Instructions</label>
-  <div class="collapsible-content">	   
-    <div class="content-inner">        
+		<div class="wrap-collabsible0">
+		<input id="collapsible0" class="toggle0" type="checkbox" unchecked>
+		<label for="collapsible0" class="lbl-toggle0">Instructions</label>
+			<div class="collapsible-content0">	   
+				<div class="content-inner0">         
 		<div class="instruction">			
 			<h1 class="glow" >Mouse-over faces to select (White Sphere)<br> and click to add a Tetra design element. <br>Rotate and zoom in open space.<br>Right-click deletes a Tetra.<br>If you cannot do right-click you may <br>toggle Build/Delete in the Controls below.
 			</h1>			
 		</div>
-		<a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="License" style="border-width:0" src="images/CCNC.png" width ="88" height="31"></a><br>
-		<a href="Payment.html">
-		<img src="images/buyMe2.png"  ></img></a><br>
-		<a href="index.html">
-		  <img src="images/2019LogoTss.png"></a>	<br><br>
-		</div>	
-    </div>
-  </div>
- 
+				<a href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="License" style="border-width:0" src="images/CCNC.png" width ="88" height="31"></a><br>
+				<a href="Payment.html">
+				<img src="images/buyMe2.png"  width ="88" height="50"></img></a><br>
+				<a href="index.html">
+				<img src="images/2019LogoTss.png" width ="88" height="50"></a>	<br><br>
+				</div>	
+			</div>
+		</div>
   
-  <div class="wrap-collabsible2">
-  <input id="collapsible2" class="toggle2" type="checkbox" unchecked>
-  <label for="collapsible2" class="lbl-toggle2">Controls</label>
-  <div class="collapsible-content2">
-    <div class="content-inner2">		
-		<h1 class="glow">Change Tetra</h1>
-  <img src="images/rarrow3.png" width="48" height="48" onclick="prevTetra()"></img>
-		<img src="images/garrow3.png" width="48" height="48" onclick="nextTetra()" ></img><br>
-		 <h1 class="glow">Change Texture</h1>
-	<img src="images/rarrow4.png" width="48" height="48" onclick="prevTex()"></img>
-		<img src="images/garrow4.png" width="48" height="48" onclick="nextTex()" ></img><br>
-		<h1 class="glow">Build or Delete</h1><br>	
-		<input id="img-switcher" onclick="deleteX()" type="checkbox"></input>
-		<label for="img-switcher"></label><br>
-		 <h1 class="glow">Rotate Piece</h1>
-		<img src="images/RX.png" onclick="keyboardX()" ></img>
-		<img src="images/RY.png" onclick="keyboardY()" ></img>
-		<img src="images/RZ.png" onclick="keyboardZ()" ></img>
-
- </div>
-  </div>
-   </div>
- 
-
   
+	<div class="wrap-collabsible2">
+	<input id="collapsible2" class="toggle2" type="checkbox" unchecked>
+	<label for="collapsible2" class="lbl-toggle2">Controls</label>
+		<div class="collapsible-content2">
+			<div class="content-inner2">		
+			<h1 class="glow">Change Tetra</h1>
+			<img src="images/rarrow3.png" width="30" height="30" onclick="prevTetra()"></img>
+			<img src="images/garrow3.png" width="30" height="30" onclick="nextTetra()" ></img><br>
+			<h1 class="glow">Change Texture</h1>
+			<img src="images/rarrow4.png" width="30" height="30" onclick="prevTex()"></img>
+			<img src="images/garrow4.png" width="30" height="30" onclick="nextTex()" ></img><br>
+			<h1 class="glow">Build or Delete</h1><br>	
+			<input id="img-switcher" onclick="deleteX()" type="checkbox"></input>
+			<label for="img-switcher"></label><br>
+			<h1 class="glow">Rotate Piece</h1>
+			<img src="images/RX.png" width ="22" height="22" onclick="keyboardX()" ></img>
+			<img src="images/RY.png" width ="22" height="22" onclick="keyboardY()" ></img>
+			<img src="images/RZ.png" width ="22" height="22" onclick="keyboardZ()" ></img>
+			</div>
+		</div>
+	</div>
+	<div class="wrap-collabsible3">
+	<input id="collapsible3" class="toggle3" type="checkbox" unchecked>
+	<label for="collapsible3" class="lbl-toggle3">Sponsors</label>
+		<div class="collapsible-content3">
+			<div class="content-inner3">		
+			<a href="https://www.worldwildlife.org/"><img alt="We support them!" style="border-width:0" src="images/wwf.png" width ="100" height="128" onclick="keyboardZ()"></a><br>
+			<h1 class="glow">Link your business here; email to: </h1> <p class="pp">tgeni@protonmail.com </p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</div>
 
- </div>
+ 
  <!-- -->
 
  <!-- -->
