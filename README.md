@@ -1,4 +1,4 @@
-<a href='http://TetraGenius.github.io'>Home</a>
-TetraGenius.github.io
+<a href='http://TetraGenius.github.io'>TetraGenius Website and Tetra-voxel designer for 3D Printing</a>
+<br>
 http://TetraGenius.github.io
 
