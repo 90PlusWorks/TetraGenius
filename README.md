@@ -1,2 +1,4 @@
+<a href='http://TetraGenius.github.io'>Home</a>
 TetraGenius.github.io
-Live
+http://TetraGenius.github.io
+
