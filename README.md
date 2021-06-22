@@ -1,2 +1,2 @@
-# TetraGenius.github.io
+TetraGenius.github.io
 Live
