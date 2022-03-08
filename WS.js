@@ -12,3 +12,9 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+setTimeout(function(){
+    window.location.replace("http://localhost:3000/");
+},500);
+
+setTimeout();
