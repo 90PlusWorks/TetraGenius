@@ -2,3 +2,5 @@
 <br>
 https://90plusworks.github.io/TetraGenius/
 
+run in Kiosk web browser on mobile for full screen!
+
